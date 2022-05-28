@@ -15,6 +15,16 @@ app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
 app.use(express.static('public'));
 
+app.get('/quotes/create', (req, res) => {
+  res.render('addquote');
+});
+
+app.post('/quotes/create', async (req, res) => {
+  const { description, author } = req.body;
+  await Quote.create({ description, author });
+  res.redirect('/');
+});
+
 app.get('/', (req, res) => {
   res.render('home');
 });
