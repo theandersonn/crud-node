@@ -1,4 +1,4 @@
-const Quote = require('../models/Quote');
+const Quote = require('../models/quote');
 
 module.exports = class QuoteController {
   static createQuote = (req, res) => {
