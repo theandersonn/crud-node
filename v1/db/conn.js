@@ -5,4 +5,11 @@ const sequelize = new Sequelize('quotes', 'root', 'root', {
   dialect: 'mysql'
 });
 
+try {
+  sequelize.authenticate();
+  console.log('🚀 Database successfully connected');
+} catch (error) {
+  console.log('💥 Error trying to connect to the database');
+}
+
 module.exports = sequelize;
