@@ -2,16 +2,17 @@ const Quote = require('../models/quote');
 
 module.exports = class QuoteController {
   static createQuote = (req, res) => {
-    res.render('createquote');
+    res.render('create');
   };
 
   static createQuoteSave = async (req, res) => {
     const { description, author } = req.body;
     await Quote.create({ description, author });
-    res.redirect('/quotes');
+    res.redirect('list');
   };
 
   static getAllQuotes = async (req, res) => {
-    res.render('home');
+    const quotes = await Quote.findAll({ raw: true });
+    res.render('list', { quotes });
   };
 };
