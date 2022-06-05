@@ -8,6 +8,10 @@ const app = express();
 
 const conn = require('./db/conn');
 
+// Models
+const Quote = require('./models/Quote');
+const User = require('./models/User');
+
 // template engine
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -58,6 +62,7 @@ app.use((req, res, next) => {
 });
 
 conn
+  // .sync({ force: true })
   .sync()
   .then(() => { app.listen(3333) })
   .catch((err) => console.log(err));
