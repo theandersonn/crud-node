@@ -9,7 +9,7 @@ try {
   sequelize.authenticate();
   console.log('🚀 Database successfully connected');
 } catch (error) {
-  console.log('💥 Error trying to connect to the database');
-}
+  console.log(`💥 Error trying to connect to the database: ${error}`);
+};
 
 module.exports = sequelize;
