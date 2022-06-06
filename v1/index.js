@@ -12,6 +12,12 @@ const conn = require('./db/conn');
 const Quote = require('./models/Quote');
 const User = require('./models/User');
 
+// Import routes
+const quotesRoutes = require('./routes/quotesRoutes');
+
+// Import Controller
+const QuoteController = require('./controllers/QuoteController');
+
 // template engine
 app.engine('handlebars', exphbs.engine());
 app.set('view engine', 'handlebars');
@@ -60,6 +66,10 @@ app.use((req, res, next) => {
 
   next();
 });
+
+// Routes
+app.use('/quotes', quotesRoutes);
+app.get('/', QuoteController.showQuotes)
 
 conn
   // .sync({ force: true })

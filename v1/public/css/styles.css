@@ -9,7 +9,9 @@ html {
 }
 
 body {
+  background-color: #2F4159;
   font-size: 1.6rem;
+  color: #FEFEFE;
 }
 
 .navbar {
