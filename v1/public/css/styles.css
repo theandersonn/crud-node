@@ -9,46 +9,58 @@ html {
 }
 
 body {
-  background-color: #2F4159;
+  font-family: Helvetica;
   font-size: 1.6rem;
+  background-color: #2F4159;
   color: #FEFEFE;
 }
 
+/* NAVBAR */
 .navbar {
-  border-bottom: 1px solid #ccc;
-  padding: .8rem;
+  border-bottom: 1px solid #009a9a;
+  padding: 1.2rem 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar ul {
   display: flex;
   list-style: none;
-  margin: 0;
 }
 
 .navbar ul li {
-  margin-left: 1.2rem;
+  margin-left: 1.8rem;
 }
 
-h1 {
-  text-align: center;
+.navbar ul li a {
+  text-decoration: none;
+  transition: .5s;
+  color: #FEFEFE;
 }
 
-.form {
-  width: 650px;
-  margin: 0 auto;
+.navbar ul li a:hover {
+  text-decoration: underline;
+  color: #009a9a;
 }
 
-.form-control {
+/* CONTAINER */
+.container {
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+/* FOOTER */
+footer {
+  height: 15rem;
   display: flex;
-  flex-direction: column;
-  margin-bottom: .8rem;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #009a9a;
 }
 
-.form-control label {
+footer span {
   font-weight: bold;
-  margin-bottom: .4rem;
-}
-
-.form-control input {
-  padding: .5rem;
+  color: #009a9a;
 }
