@@ -2,7 +2,9 @@ const Quote = require('../models/Quote');
 
 module.exports = class QuoteController {
   static async showQuotes(req, res) {
-    res.render('quotes/all');
+    const quotesData = await Quote.findAll();
+    const quotes = quotesData.map((result) => result.get({plain: true}));
+    res.render('quotes/all', { quotes });
   }
 
   static async createQuotePost(req, res) {

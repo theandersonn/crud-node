@@ -1,1 +1,14 @@
-<h1>Todos as citações</h1>
+<div class="home-header">
+  <h1>Todas as citações</h1>
+</div>
+
+<div class="quotes-container">
+  {{#each quotes}}
+    <figure>
+      <blockquote>
+        "{{this.description}}"
+      </blockquote>
+      <figcaption>por <span>{{this.author}}</span></figcaption>
+    </figure>
+  {{/each}}
+</div>

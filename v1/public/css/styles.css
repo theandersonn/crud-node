@@ -56,6 +56,34 @@ body {
   margin-bottom: 2rem;
 }
 
+/* HOME */
+.home-header {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-header h1 {
+  margin-bottom: 2rem;
+}
+
+.quotes-container figure {
+  border-bottom: 1px solid rgba(255, 255, 255, .3);
+  padding: .7rem;
+  max-width: 50%;
+  margin: 0 auto 1rem;
+}
+
+.quotes-container blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  margin-bottom: .4rem;
+}
+
+.quotes-container span {
+  color: #009a9a;
+}
+
 /* FORM */
 form {
   max-width: 480px;
@@ -90,7 +118,7 @@ form {
 
 /* FOOTER */
 footer {
-  height: 15rem;
+  height: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,4 +128,5 @@ footer {
 footer span {
   font-weight: bold;
   color: #009a9a;
+  display: inline-block;
 }
