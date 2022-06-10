@@ -1,0 +1,19 @@
+<div>
+  <div class="home-headerr">
+    <h1>Editando um pensamento:</h1>
+  </div>
+
+  <form action="/quotes/edit" method="POST">
+    <div class="form-control">
+      <label for="description">Citação:</label>
+      <textarea name="description" placeholder="Insira a citação" required></textarea>
+    </div>
+
+    <div class="form-control">
+      <label for="author">Insira o autor:</label>
+      <input type="text" name="author" placeholder="Insira o nome do autor" required>
+    </div>
+
+    <input type="submit" value="Editar" class="btn">
+  </form>
+</div>

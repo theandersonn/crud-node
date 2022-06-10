@@ -4,11 +4,17 @@
 
 <div class="quotes-container">
   {{#each quotes}}
-    <figure>
-      <blockquote>
-        "{{this.description}}"
-      </blockquote>
-      <figcaption>por <span>{{this.author}}</span></figcaption>
-    </figure>
+    <div class="quote">
+      <figure>
+        <blockquote>
+          "{{this.description}}"
+        </blockquote>
+        <figcaption>por <span>{{this.author}}</span></figcaption>
+      </figure>
+
+      <div class="actions">
+        <a class="btn" href="/quotes/edit/{{this.id}}">Editar</a>
+      </div>
+    </div>
   {{/each}}
 </div>

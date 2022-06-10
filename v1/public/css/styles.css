@@ -67,22 +67,43 @@ body {
   margin-bottom: 2rem;
 }
 
+.quotes-container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
 .quotes-container figure {
-  border-bottom: 1px solid rgba(255, 255, 255, .3);
   padding: .7rem;
-  max-width: 50%;
-  margin: 0 auto 1rem;
+  max-width: 680px;
+  margin-top: .5rem;
 }
 
 .quotes-container blockquote {
   font-style: italic;
   font-size: 2rem;
+  line-height: 3rem;
   margin-bottom: .4rem;
 }
 
 .quotes-container span {
   color: #009a9a;
 }
+
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quote + .quote {
+  border-top: 1px solid rgba(255, 255, 255, .3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
 
 /* FORM */
 form {
@@ -113,6 +134,7 @@ form {
   border: none;
   margin-top: 1rem;
   cursor: pointer;
+  text-decoration: none;
 }
 
 

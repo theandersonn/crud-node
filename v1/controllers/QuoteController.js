@@ -23,4 +23,10 @@ module.exports = class QuoteController {
   static createQuote(req, res) {
     res.render('quotes/create');
   }
+
+  static async editQuote(req, res) {
+    const id = req.params.id;
+    const quote = await Quote.findOne({ where: {id: id}, raw: true });
+    res.render('quotes/edit', { quote });
+  }
 }
