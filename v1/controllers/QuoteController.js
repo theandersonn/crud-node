@@ -29,4 +29,19 @@ module.exports = class QuoteController {
     const quote = await Quote.findOne({ where: {id: id}, raw: true });
     res.render('quotes/edit', { quote });
   }
+
+  static async editQuotePost(req, res) {
+    const id = req.body.id;
+    const quote = {
+      description: req.body.description,
+      author: req.body.author
+    }
+
+    try {
+      await Quote.update(quote, { where: { id: id } });
+      res.redirect('/');
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

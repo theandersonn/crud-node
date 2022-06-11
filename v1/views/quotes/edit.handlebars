@@ -4,14 +4,17 @@
   </div>
 
   <form action="/quotes/edit" method="POST">
+    <input type="hidden" name="id" value="{{quote.id}}">
     <div class="form-control">
       <label for="description">Citação:</label>
-      <textarea name="description" placeholder="Insira a citação" required></textarea>
+      <textarea rows="4" name="description" placeholder="Insira a citação" required>
+        {{quote.description}}
+      </textarea>
     </div>
 
     <div class="form-control">
       <label for="author">Insira o autor:</label>
-      <input type="text" name="author" placeholder="Insira o nome do autor" required>
+      <input type="text" name="author" placeholder="Insira o nome do autor" required value="{{quote.author}}">
     </div>
 
     <input type="submit" value="Editar" class="btn">
