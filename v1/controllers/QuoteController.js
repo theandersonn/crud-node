@@ -44,4 +44,15 @@ module.exports = class QuoteController {
       console.log(error);
     }
   }
+
+  static async removeQuote(req, res) {
+    const id = req.body.id;
+
+    try {
+      await Quote.destroy({ where: {id: id} })
+      res.redirect('/');
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

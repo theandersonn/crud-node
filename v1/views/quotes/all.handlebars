@@ -13,6 +13,10 @@
       </figure>
 
       <div class="actions">
+        <form action="/quotes/remove" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <input type="submit" value="Excluir" class="btn">
+        </form>
         <a class="btn" href="/quotes/edit/{{this.id}}">Editar</a>
       </div>
     </div>
