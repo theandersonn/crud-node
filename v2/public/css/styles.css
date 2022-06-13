@@ -86,14 +86,14 @@ body {
 .quotes-container figure {
   padding: .7rem;
   max-width: 680px;
-  margin-top: .5rem;
+  margin: .5rem 0 0 0;
 }
 
 .quotes-container blockquote {
   font-style: italic;
   font-size: 2rem;
   line-height: 3rem;
-  margin-bottom: .4rem;
+  margin: 0 0 .4rem 0;
 }
 
 .quotes-container span {

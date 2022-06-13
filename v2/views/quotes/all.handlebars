@@ -1,3 +1,24 @@
 <div class="home-header">
   <h1>Todas as citações</h1>
 </div>
+
+<div class="quotes-container">
+  {{#each quotes}}
+    <div class="quote">
+      <figure>
+        <blockquote>
+          "{{this.description}}"
+        </blockquote>
+        <figcaption>por: <span>{{this.author}}</span></figcaption>
+      </figure>
+
+      <div class="actions">
+        <form action="/quotes/remove" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <input type="submit" value="Excluir" class="btn">
+        </form>
+        <a class="btn" href="/quotes/edit/{{this.id}}">Editar</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

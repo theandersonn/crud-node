@@ -14,7 +14,12 @@ class Quote {
       updatedAt: new Date(),
     });
     return quote;
-  }
+  };
+
+  static getQuotes() {
+    const quotes = conn.db().collection('quotes').find().toArray();
+    return quotes;
+  };
 };
 
 module.exports = Quote;
