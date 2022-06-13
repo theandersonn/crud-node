@@ -2,7 +2,9 @@ const Quote = require('../models/Quote');
 
 module.exports = class QuoteController {
   static async showQuotes(req, res) {
-    const quotesData = await Quote.findAll();
+    const quotesData = await Quote.findAll({
+      order: [ ['id', 'DESC'] ]
+    });
     const quotes = quotesData.map((result) => result.get({plain: true}));
     res.render('quotes/all', { quotes });
   }
