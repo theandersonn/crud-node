@@ -1,4 +1,4 @@
-> Quotes - Coleção com pensamentos positivos
+> Quotes - Coleção com pensamentos positivos.
 
 ## techs
 - Node.js
