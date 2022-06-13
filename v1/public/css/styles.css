@@ -16,6 +16,14 @@ body {
   color: #FEFEFE;
 }
 
+/* GENERAL */
+.wrapper-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
 /* NAVBAR */
 .navbar {
   border-bottom: 1px solid #009a9a;
