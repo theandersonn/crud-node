@@ -1,0 +1,31 @@
+Arguments: 
+  /Users/theandersonn/.nvm/versions/node/v16.14.2/bin/node /opt/homebrew/Cellar/yarn/1.22.18/libexec/bin/yarn.js add express express-handlebars nodemon mongodb
+
+PATH: 
+  /opt/homebrew/bin:/opt/homebrew/bin:/Users/theandersonn/.nvm/versions/node/v16.14.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/opt/homebrew/bin:/Users/theandersonn/.nvm/versions/node/v16.14.2/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.14.2
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  SyntaxError: /Users/theandersonn/Documents/quotes/v2/package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at /opt/homebrew/Cellar/yarn/1.22.18/libexec/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/opt/homebrew/Cellar/yarn/1.22.18/libexec/lib/cli.js:310:30)
+      at /opt/homebrew/Cellar/yarn/1.22.18/libexec/lib/cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
