@@ -1,0 +1,185 @@
+2.27 KB
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Helvetica;
+  font-size: 1.6rem;
+  background-color: #2F4159;
+  min-height: 500px;
+  color: #FEFEFE;
+}
+
+/* GENERAL */
+.wrapper-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+/* NAVBAR */
+.navbar {
+  border-bottom: 1px solid #009a9a;
+  padding: 1.2rem 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbar ul li {
+  margin-left: 1.8rem;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  transition: .5s;
+  color: #FEFEFE;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+  color: #009a9a;
+}
+
+/* CONTAINER */
+.container {
+  min-height: 60vh;
+  padding: 2rem;
+}
+
+.container h1 {
+  margin-bottom: 2rem;
+}
+
+/* QUOTE PAGE */
+.quote-page h1 {
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.quote-page p {
+  font-size: 2rem;
+  color: #009a9a;
+}
+
+/* HOME */
+.home-header {
+  max-width: 60%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-header h1 {
+  margin-bottom: 2rem;
+}
+
+.quotes-container {
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.quotes-container figure {
+  padding: .7rem;
+  max-width: 680px;
+  margin: .5rem 0 0 0;
+}
+
+.quotes-container blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: 0 0 .4rem 0;
+}
+
+.quotes-container span {
+  color: #009a9a;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quote + .quote {
+  border-top: 1px solid rgba(255, 255, 255, .3);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+
+/* FORM */
+form {
+  max-width: 480px;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control label {
+  font-weight: bold;
+  margin-bottom: .4rem;
+}
+
+.form-control input,
+.form-control textarea {
+  border: 1px solid #fff;
+  padding: 5px;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  background-color: #fff;
+  color: #000;
+  padding: .5rem 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  font-size: 1.4rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.actions a {
+  margin-left: .8rem;
+}
+
+
+/* FOOTER */
+footer {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #009a9a;
+}
+
+footer span {
+  font-weight: bold;
+  color: #009a9a;
+  display: inline-block;
+}
