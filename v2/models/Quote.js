@@ -26,6 +26,11 @@ class Quote {
     await conn.db().collection('quotes').deleteOne({ _id: ObjectId(id) });
     return;
   };
+
+  static async getQuoteById(id) {
+    const product = await conn.db().collection('quotes').findOne({ _id: ObjectId(id) });
+    return product;
+  };
 };
 
 module.exports = Quote;

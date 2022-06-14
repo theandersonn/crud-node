@@ -67,6 +67,17 @@ body {
   margin-bottom: 2rem;
 }
 
+/* QUOTE PAGE */
+.quote-page h1 {
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+.quote-page p {
+  font-size: 2rem;
+  color: #009a9a;
+}
+
 /* HOME */
 .home-header {
   max-width: 60%;
@@ -153,8 +164,8 @@ form {
   align-items: center;
 }
 
-.actions form{
-  margin-right: .8rem;
+.actions a {
+  margin-left: .8rem;
 }
 
 
