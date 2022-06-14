@@ -31,6 +31,11 @@ class Quote {
     const product = await conn.db().collection('quotes').findOne({ _id: ObjectId(id) });
     return product;
   };
+
+  updateQuote(id) {
+    conn.db().collection('quotes').updateOne({ _id: ObjectId(id) }, { $set: this });
+    return;
+  }
 };
 
 module.exports = Quote;

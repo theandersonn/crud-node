@@ -37,6 +37,17 @@ module.exports = class QuoteController {
     res.render('quotes/edit', { quote });
   };
 
+  static async editQuotePost(req, res) {
+    try {
+      const { id, description, author } = req.body;
+      const quote = new Quote(description, author);
+      await quote.updateQuote(id);
+      res.redirect('/quotes');  
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   static async getQuote(req, res) {
     const id = req.params.id;
     const quote = await Quote.getQuoteById(id);
