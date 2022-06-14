@@ -31,6 +31,12 @@ module.exports = class QuoteController {
     res.redirect('/quotes');
   };
 
+  static async editQuote(req, res) {
+    const id = req.params.id;
+    const quote = await Quote.getQuoteById(id);
+    res.render('quotes/edit', { quote });
+  };
+
   static async getQuote(req, res) {
     const id = req.params.id;
     const quote = await Quote.getQuoteById(id);
