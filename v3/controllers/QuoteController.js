@@ -16,4 +16,10 @@ module.exports = class QuoteController {
       console.log(error);
     }
   };
+
+  // LIST ALL
+  static async showQuotes(req, res) {
+    const quotes = await Quote.find().lean();
+    res.render('quotes/all', { quotes });
+  };
 };
