@@ -24,4 +24,10 @@ module.exports = class QuoteController {
       console.log(error);
     }
   };
+
+  static async removeQuote(req, res) {
+    const id = req.params.id;
+    await Quote.removeQuoteById(id);
+    res.redirect('/quotes');
+  };
 };

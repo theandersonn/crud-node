@@ -1,4 +1,5 @@
 const conn = require('../db/conn');
+const { ObjectId } = require('mongodb');
 
 class Quote {
   constructor(description, author) {
@@ -19,6 +20,11 @@ class Quote {
   static getQuotes() {
     const quotes = conn.db().collection('quotes').find().sort({createdAt: -1}).toArray();
     return quotes;
+  };
+
+  static async removeQuoteById(id) {
+    await conn.db().collection('quotes').deleteOne({ _id: ObjectId(id) });
+    return;
   };
 };
 
