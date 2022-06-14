@@ -17,7 +17,7 @@ class Quote {
   };
 
   static getQuotes() {
-    const quotes = conn.db().collection('quotes').find().toArray();
+    const quotes = conn.db().collection('quotes').find().sort({createdAt: -1}).toArray();
     return quotes;
   };
 };
