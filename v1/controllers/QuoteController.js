@@ -51,9 +51,8 @@ module.exports = class QuoteController {
 
   static async editQuotePost(req, res) {
     const { id, description, author } = req.body;
-    const quote = { description, author };
     try {
-      await Quote.update(quote, { where: { id } });
+      await Quote.update({ description, author }, { where: { id } });
       res.redirect('/');
     } catch (error) {
       console.log(error);
