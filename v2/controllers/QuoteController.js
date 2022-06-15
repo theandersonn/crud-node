@@ -1,15 +1,7 @@
 const Quote = require('../models/Quote');
 
 module.exports = class QuoteController {
-  static async showQuotes(req, res) {
-    try {
-      const quotes = await Quote.getQuotes();
-      res.render('quotes/all', { quotes });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
+  // CREATE ITEM
   static createQuote(req, res) {
     res.render('quotes/create');
   };
@@ -25,12 +17,24 @@ module.exports = class QuoteController {
     }
   };
 
-  static async removeQuote(req, res) {
-    const id = req.params.id;
-    await Quote.removeQuoteById(id);
-    res.redirect('/quotes');
+  // LIST ALL
+  static async showQuotes(req, res) {
+    try {
+      const quotes = await Quote.getQuotes();
+      res.render('quotes/all', { quotes });
+    } catch (error) {
+      console.log(error);
+    }
   };
 
+  // LIST ITEM
+  static async getQuote(req, res) {
+    const id = req.params.id;
+    const quote = await Quote.getQuoteById(id);
+    res.render('quotes/quote', { quote })
+  };
+
+  // EDIT ITEM
   static async editQuote(req, res) {
     const id = req.params.id;
     const quote = await Quote.getQuoteById(id);
@@ -46,11 +50,12 @@ module.exports = class QuoteController {
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  static async getQuote(req, res) {
+  // DELETE ITEM
+  static async removeQuote(req, res) {
     const id = req.params.id;
-    const quote = await Quote.getQuoteById(id);
-    res.render('quotes/quote', { quote })
+    await Quote.removeQuoteById(id);
+    res.redirect('/quotes');
   };
 };
