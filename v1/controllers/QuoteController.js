@@ -1,57 +1,59 @@
 const Quote = require('../models/Quote');
 
 module.exports = class QuoteController {
-  static async showQuotes(req, res) {
-    const quotesData = await Quote.findAll({
-      order: [ ['id', 'DESC'] ]
-    });
-    const quotes = quotesData.map((result) => result.get({plain: true}));
-    res.render('quotes/all', { quotes });
-  }
+  // CREATE
+  static createQuote(req, res) {
+    res.render('quotes/create');
+  };
 
   static async createQuotePost(req, res) {
     try {
-      const quote = {
-        description: req.body.description,
-        author: req.body.author
-      };
-      await Quote.create(quote); 
+      const { description, author } = req.body;
+      await Quote.create({ description, author }); 
       res.redirect('/');     
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
-  static createQuote(req, res) {
-    res.render('quotes/create');
-  }
-
-  static async editQuote(req, res) {
-    const id = req.params.id;
-    const quote = await Quote.findOne({ where: {id: id}, raw: true });
-    res.render('quotes/edit', { quote });
-  }
-
-  static async editQuotePost(req, res) {
-    const id = req.body.id;
-    const quote = {
-      description: req.body.description,
-      author: req.body.author
-    }
-
+  // LIST ALL
+  static async showQuotes(req, res) {
     try {
-      await Quote.update(quote, { where: { id: id } });
-      res.redirect('/');
+      const quotesData = await Quote.findAll({ order: [['id', 'DESC']] });
+      const quotes = quotesData.map((result) => result.get({ plain: true }));
+      res.render('quotes/all', { quotes });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // EDIT ITEM
+  static async editQuote(req, res) {
+    try {
+      const { id } = req.params;
+      const quote = await Quote.findOne({ where: { id }, raw: true });
+      res.render('quotes/edit', { quote });
     } catch (error) {
       console.log(error);
     }
   }
 
-  static async removeQuote(req, res) {
-    const id = req.body.id;
-
+  static async editQuotePost(req, res) {
+    const { id, description, author } = req.body;
+    const quote = { description, author };
     try {
-      await Quote.destroy({ where: {id: id} })
+      await Quote.update(quote, { where: { id } });
+      res.redirect('/');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // DELETE ITEM
+  static async removeQuote(req, res) {
+    try {
+      const { id } = req.body;
+      await Quote.destroy({ where: { id } })
       res.redirect('/');
     } catch (error) {
       console.log(error);
