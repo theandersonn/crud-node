@@ -59,4 +59,15 @@ module.exports = class QuoteController {
       console.log(error);
     }
   };
+
+  // DELETE
+  static async removeQuote(req, res) {
+    try {
+      const { id } = req.params;
+      await Quote.deleteOne({ _id: id });
+      res.redirect('/quotes');
+    } catch (error) {
+      console.log(error);
+    }
+  };
 };
