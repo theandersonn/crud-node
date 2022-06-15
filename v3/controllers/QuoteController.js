@@ -19,7 +19,22 @@ module.exports = class QuoteController {
 
   // LIST ALL
   static async showQuotes(req, res) {
-    const quotes = await Quote.find().lean();
-    res.render('quotes/all', { quotes });
+    try {
+      const quotes = await Quote.find().lean();
+      res.render('quotes/all', { quotes });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // LIST ITEM
+  static async getQuote(req, res) {
+    try {
+      const { id } = req.params;
+      const quote = await Quote.findById(id).lean();
+      res.render('quotes/quote', { quote });
+    } catch (error) {
+      console.log(error);
+    }
   };
 };
