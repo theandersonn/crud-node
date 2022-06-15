@@ -27,6 +27,17 @@ module.exports = class QuoteController {
     }
   };
 
+  // LIST ITEM
+  static async getQuote(req, res) {
+    try {
+      const { id } = req.params;
+      const quote = await Quote.findOne({ where: { id }, raw: true });
+      res.render('quotes/quote', { quote });
+    } catch (error) {
+      console.log(error);
+    }
+  }; 
+
   // EDIT ITEM
   static async editQuote(req, res) {
     try {
